@@ -16,6 +16,9 @@ public class RobotTemplate extends SimpleRobot {
     /**
      * This function is called once each time the robot enters autonomous mode.
      */
+    
+    DifferentialDriveTrain drive = new DifferentialDriveTrain();
+    
     public void autonomous() {
         
     }
@@ -24,7 +27,16 @@ public class RobotTemplate extends SimpleRobot {
      * This function is called once each time the robot enters operator control.
      */
     public void operatorControl() {
-
+        while(this.isEnabled() && this.isOperatorControl()){
+            
+            if(OI.jy_LeftAttack.getTrigger()){
+                drive.setLeftSide(OI.jy_LeftAttack.getY());
+            }
+            if(OI.jy_LeftAttack.getTrigger()){
+                drive.setRightSide(OI.jy_RightAttack.getY());
+            }
+            
+        }
     }
     
     /**
