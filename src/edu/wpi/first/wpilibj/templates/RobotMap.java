@@ -6,6 +6,7 @@
 
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 
 public class RobotMap {
@@ -36,8 +37,8 @@ public class RobotMap {
     public static final int rightJoystickUSBPort            = 2;
     public static final int gamepadUSBPort                  = 3;
     
-    //Port Information for Sensors
-    public static final int accelerometerDigitalModule      = 1;
+    public static final int drivetrainSolenoidModule        = 1;
+    public static final int drivetrainSolenoidPort          = 1;
     
     //Static instatiations of all DriveTrain victors
     public static final Victor v_FrontLeftDriveTrain = new Victor(driveTrainDigitalModule, frontLeftDriveTrainMotorPort);
@@ -50,5 +51,8 @@ public class RobotMap {
     public static final Victor v_latchWindowMotor = new Victor(triggerWindowMotorDigitalModule, triggerWindowMotorPort);
     public static final Victor v_rollMotor = new Victor(collectorMotorDigitalModule, collectorMotorPort);
     public static final Victor v_harvesterActuatorMotor = new Victor(harvesterActuatorDigitalModule, harvesterActuatorMotorPort);
+    
+    //Static instantiations of all pneumatic solenoids
+    public static final Solenoid s_drivetrain = new Solenoid(drivetrainSolenoidModule, drivetrainSolenoidPort);
     
 }

@@ -19,6 +19,7 @@ public class RobotTemplate extends SimpleRobot {
      */
     
     DifferentialDriveTrain drive = new DifferentialDriveTrain();
+    boolean gear = true;
     
     public void autonomous() {
         
@@ -45,6 +46,16 @@ public class RobotTemplate extends SimpleRobot {
             tankDriveListener();
             flapListener();
             
+        }
+    }
+    
+    public void transmissionListener(){
+        RobotMap.s_drivetrain.set(gear);
+        if(OI.jb_LeftAttackTop.get() && OI.jb_RightAttackTop.get()){
+            gear = !gear;
+            while(OI.jb_LeftAttackTop.get() && OI.jb_RightAttackTop.get()){
+                //do nothing
+            }
         }
     }
     
