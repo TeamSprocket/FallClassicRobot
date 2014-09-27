@@ -45,6 +45,7 @@ public class RobotTemplate extends SimpleRobot {
             rollListener();
             tankDriveListener();
             flapListener();
+            transmissionListener();
             
         }
     }
