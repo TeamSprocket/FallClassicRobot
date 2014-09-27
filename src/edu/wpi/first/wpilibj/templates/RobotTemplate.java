@@ -24,9 +24,9 @@ public class RobotTemplate extends SimpleRobot {
         
         while(this.isAutonomous() && this.isEnabled()){
             
-            drive.allForward();
+            drive.allBack(0.5);        //must use allBack() to go forward
             
-            Timer.delay(3);
+            Timer.delay(1);
             
             drive.stop();
             
@@ -40,7 +40,28 @@ public class RobotTemplate extends SimpleRobot {
     public void operatorControl() {
         while(this.isEnabled() && this.isOperatorControl()){
             
-            if(OI.jy_LeftAttack.getTrigger()){
+            tankDriveListener();
+            rollListener();
+            tankDriveListener();
+            flapListener();
+            
+        }
+    }
+    
+    public void flapListener(){
+        
+    }
+    
+    public void shootListener(){
+        
+    }
+    
+    public void rollListener(){
+        
+    }
+    
+    public void tankDriveListener(){
+        if(OI.jy_LeftAttack.getTrigger()){
                 drive.setLeftSide(OI.jy_LeftAttack.getY());
             }
             else{
@@ -53,9 +74,6 @@ public class RobotTemplate extends SimpleRobot {
             else{
                 drive.setRightSide(0);
             }
-            
-            
-        }
     }
     
     /**
