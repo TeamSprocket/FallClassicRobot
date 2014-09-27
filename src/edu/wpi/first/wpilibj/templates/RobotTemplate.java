@@ -4,6 +4,7 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.SimpleRobot;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,6 +21,16 @@ public class RobotTemplate extends SimpleRobot {
     DifferentialDriveTrain drive = new DifferentialDriveTrain();
     
     public void autonomous() {
+        
+        while(this.isAutonomous() && this.isEnabled()){
+            
+            drive.allForward();
+            
+            Timer.delay(3);
+            
+            drive.stop();
+            
+        }
         
     }
 
