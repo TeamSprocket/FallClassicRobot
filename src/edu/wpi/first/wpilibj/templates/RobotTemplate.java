@@ -32,9 +32,17 @@ public class RobotTemplate extends SimpleRobot {
             if(OI.jy_LeftAttack.getTrigger()){
                 drive.setLeftSide(OI.jy_LeftAttack.getY());
             }
+            else{
+                drive.setLeftSide(0);
+            }
+            
             if(OI.jy_LeftAttack.getTrigger()){
                 drive.setRightSide(OI.jy_RightAttack.getY());
             }
+            else{
+                drive.setRightSide(0);
+            }
+            
             
         }
     }
