@@ -30,6 +30,7 @@ public class RobotMap {
     public static final int harvesterActuatorMotorPort      = 2;
     public static final int rackDriverMotorPort             = 5;
     public static final int collectorMotorPort              = 6;
+
     
     
     //USB Port # for Interface Devices
@@ -47,10 +48,11 @@ public class RobotMap {
     public static final Victor v_BackRightDriveTrain = new Victor(driveTrainDigitalModule, backRightDriveTrainMotorPort);
     
     //Static instantiations of all Arm victors
-    public static final Victor v_rackMotor = new Victor(rackDriverDigitalModule, rackDriverMotorPort);
-    public static final Victor v_latchWindowMotor = new Victor(triggerWindowMotorDigitalModule, triggerWindowMotorPort);
-    public static final Victor v_rollMotor = new Victor(collectorMotorDigitalModule, collectorMotorPort);
-    public static final Victor v_harvesterActuatorMotor = new Victor(harvesterActuatorDigitalModule, harvesterActuatorMotorPort);
+  public static final Victor v_mainRackDriver = new Victor(rackDriverDigitalModule, rackDriverMotorPort);
+    public static final Victor v_triggerWindowMotor = new Victor(triggerWindowMotorDigitalModule, triggerWindowMotorPort);
+    public static final Victor v_collectorMotor = new Victor(collectorMotorDigitalModule, collectorMotorPort);
+    public static final Victor v_harvesterActuator = new Victor(harvesterActuatorDigitalModule, harvesterActuatorMotorPort);
+    
     
     //Static instantiations of all pneumatic solenoids
     public static final Solenoid s_drivetrain = new Solenoid(drivetrainSolenoidModule, drivetrainSolenoidPort);
